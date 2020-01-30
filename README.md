@@ -4,7 +4,9 @@ Para quem vive no terminal e não quer sair para fazer aponamento.
 
 ## Configuração
 
-Antes de utilizar você preecher os parâmetros de configuração abaixo no arquivo: `scripts/configs.bash`
+Antes de utilizar copie o arquivo `scripts/configs.bash.example` para `scripts/configs.bash`.
+
+Agora preencha os parâmetros de configuração abaixo no arquivo: `scripts/configs.bash`
 
 - LOGIN=<login_pma>
 - PASSWORD=<password_pma>
