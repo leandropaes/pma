@@ -102,8 +102,14 @@ app_new()
 {
     HR_START=${2}
     HR_END=${3}
-    DESCRIPTION="${4:-$DESCRIPTION_DEFAULT}"
-    DATE=${5-$(date +%d/%m/%Y)}
+    DATE=${4-$(date +%d/%m/%Y)}
+
+    echo -e $CL_YELLOW"Informe a descrição:\n(Descrição padrão:$CL_DEFAULT $DESCRIPTION_DEFAULT)"$CL_DEFAULT
+    read DESCRIPTION
+
+    if [ -z "$DESCRIPTION" ] ; then
+        DESCRIPTION=$DESCRIPTION_DEFAULT
+    fi
 
     if [ -z "$HR_END" ] ; then
         logo
