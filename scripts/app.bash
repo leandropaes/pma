@@ -25,6 +25,7 @@ app_project()
 {
     case ${2} in
         "list") app_project_list ;;
+        "items") app_project_items ${@} ;;
         "refresh") > $PROJECTS_FILE; app_project_list ;;
         *) menu_project ;;
     esac
@@ -58,6 +59,43 @@ app_project_list_refresh()
         | grep -P 'value="\K[^"]+' \
         | sed -e 's/<option value=//g' -e 's/<\/option>//g' -e 's/">/\t | \t /g' -e 's/"/ /g' -e 's/<\/select>//g' \
         > $PROJECTS_FILE
+}
+
+app_project_items()
+{
+    # login
+    PROJECT_COD=${3}
+
+    if [ -z "$PROJECT_COD" ] ; then
+        logo
+        
+        echo -e $CL_RED"PMA - ATENÇÃO\n"$CL_DEFAULT
+        echo -e 'Por favor, verifique se informou todos os parâmetros corretamente:\n'
+        echo -e "Ex: ./$THIS project items <project_cod>\n"
+        exit 1
+    fi
+    
+    echo > $CURL_RESPONSE_FILE
+
+    # list items
+    curl -s -b $COOKIE_FILE POST {$URL}/registros/set_atividade?projeto_id=$PROJECT_COD \
+        | sed -n '/<select id="registro_atividade_id"/,/<\/select/p' \
+        | grep -P 'value="\K[^"]+' \
+        | sed -e 's/<option value=//g' -e 's/<\/option>//g' -e 's/">/\t | \t /g' -e 's/"/ /g' -e 's/<\/select>//g' \
+        > $CURL_RESPONSE_FILE
+
+    logo 
+
+    if [ ! -s "$CURL_RESPONSE_FILE" ] ; then
+        echo -e "$CL_YELLOW\nNão há atividades atribuídas para você neste projeto.\nNão será possível efetuar apontamentos. Por favor, contate o gerente do projeto.$CL_DEFAULT"
+        echo
+    else
+        out "
+=====================================================================
+$CL_YELLOW COD$CL_DEFAULT\t | \t$CL_YELLOW ACTIVITY$CL_DEFAULT
+====================================================================="
+        cat $CURL_RESPONSE_FILE
+    fi
 }
 
 app_new()

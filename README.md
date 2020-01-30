@@ -39,6 +39,10 @@ Para listar projetos do seu usuário:
 
 `./pma.sh project list`
 
+Para listar atividades de um projeto, utilize o código retornado na lista `./pma.sh project list`:
+
+`./pma.sh project items <project_cod>`
+
 Para atualizar lista de projetos:
 
 `./pma.sh project refresh`
