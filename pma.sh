@@ -10,5 +10,5 @@ source "${PWD}/scripts/app.bash"
 case ${1} in
     "new") app_new ${@} ;;
     "project") app_project ${@} ;;
-    *) echo ; menu ;;
+    *) menu ;;
 esac
