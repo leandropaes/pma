@@ -116,7 +116,7 @@ app_new()
         
         echo -e $CL_RED"PMA - ATENÇÃO\n"$CL_DEFAULT
         echo -e 'Por favor, verifique se informou todos os parâmetros corretamente:\n'
-        echo -e "Ex: ./$THIS new 08:00 12:00 'Descrição aqui... (opicional)'\n"
+        echo -e "Ex: ./$THIS new 08:00 12:00 <date :optional>\n"
         exit 1
     fi
 

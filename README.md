@@ -16,7 +16,7 @@ Agora preencha os parâmetros de configuração abaixo no arquivo: `scripts/conf
 
 ## Apontamento
 
-`./pma.sh new <hr_start> <hr_end> <description :optional> <date :optional>`
+`./pma.sh new <hr_start> <hr_end> <date :optional>`
 
 #### Examle 1:
 Apontamento para data atual e descrição padrão:
@@ -24,14 +24,10 @@ Apontamento para data atual e descrição padrão:
 `./pma.sh new 08:00 12:00`
 
 #### Examle 2:
-Apontamento para data atual e descrição personalizada:
+Apontamento para data atual personalizada:
 
-`./pma.sh new 08:00 12:00 'Descrição aqui...'`
+`./pma.sh new 08:00 12:00 29/01/2020`
 
-#### Examle 3:
-Apontamento para data e descrição personalizada:
-
-`./pma.sh new 08:00 12:00 'Descrição aqui...' 29/01/2020`
 
 ## Projetos
 
