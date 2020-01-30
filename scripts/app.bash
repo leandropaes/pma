@@ -104,13 +104,6 @@ app_new()
     HR_END=${3}
     DATE=${4-$(date +%d/%m/%Y)}
 
-    echo -e $CL_YELLOW"Informe a descrição [ENTER para utilizar a padrão]:\n(Descrição padrão:$CL_DEFAULT $DESCRIPTION_DEFAULT)"$CL_DEFAULT
-    read DESCRIPTION
-
-    if [ -z "$DESCRIPTION" ] ; then
-        DESCRIPTION=$DESCRIPTION_DEFAULT
-    fi
-
     if [ -z "$HR_END" ] ; then
         logo
         
@@ -118,6 +111,13 @@ app_new()
         echo -e 'Por favor, verifique se informou todos os parâmetros corretamente:\n'
         echo -e "Ex: ./$THIS new 08:00 12:00 <date :optional>\n"
         exit 1
+    fi
+
+    echo -e $CL_YELLOW"Informe a descrição [ENTER para utilizar a padrão]:\n(Descrição padrão:$CL_DEFAULT $DESCRIPTION_DEFAULT)"$CL_DEFAULT
+    read DESCRIPTION
+
+    if [ -z "$DESCRIPTION" ] ; then
+        DESCRIPTION=$DESCRIPTION_DEFAULT
     fi
 
     login
