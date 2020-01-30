@@ -31,3 +31,13 @@ Apontamento para data e descrição personalizada:
 
 `./pma.sh new 08:00 12:00 'Descrição aqui...' 29/01/2020`
 
+## Projetos
+
+Para listar projetos do seu usuário:
+
+`./pma.sh project list`
+
+Para atualizar lista de projetos:
+
+`./pma.sh project refresh`
+
