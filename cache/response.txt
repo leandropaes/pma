@@ -1,0 +1,2165 @@
+<!DOCTYPE HTML PUBLIC "-//W3C//DTD HTML 4.01//EN"
+ "http://www.w3.org/TR/html4/strict.dtd">
+<html>
+<head>
+  <meta http-equiv="Content-Type" content="text/html; charset=UTF-8">
+  <title>PMA :: Dextra Sistemas</title>
+  <link rel="shortcut icon" href='/images/favicon.ico' >
+  <link href="/stylesheets/ds.css?1577384049" media="screen" rel="stylesheet" type="text/css" />
+  <link href="/stylesheets/login.css?1577384049" media="screen" rel="stylesheet" type="text/css" />
+  <link href="/stylesheets/gerencia.css?1577384049" media="screen" rel="stylesheet" type="text/css" />
+  <link href="/stylesheets/niftyCorners.css?1577384049" media="screen" rel="stylesheet" type="text/css" />
+  <link href="/stylesheets/resultado_projeto.css?1577384049" media="screen" rel="stylesheet" type="text/css" />
+  <link href="/stylesheets/jsTabbedPanel.css?1577384049" media="screen" rel="stylesheet" type="text/css" />
+  <link href="/stylesheets/niftyCorners.css?1577384049" media="screen" rel="stylesheet" type="text/css" />
+  <link href="/stylesheets/modalbox.css?1577384049" media="screen" rel="stylesheet" type="text/css" />
+  <link href="/stylesheets/table.css?1577384049" media="screen" rel="stylesheet" type="text/css" />
+ <!--[if IE]>
+ <link href="/stylesheets/msie.css?1577384049" media="screen" rel="stylesheet" type="text/css" />
+ <![endif]-->
+ <script src="/javascripts/qtip.js?1577384049" type="text/javascript"></script>
+ <script src="/javascripts/maskIt.js?1577384049" type="text/javascript"></script>
+ <script src="/javascripts/prototype.js?1577384049" type="text/javascript"></script>
+ <script src="/javascripts/scriptaculous.js?1577384049" type="text/javascript"></script>
+ <script src="/javascripts/modalbox.js?1577384049" type="text/javascript"></script>
+ <script src="/javascripts/jscalendar/calendar.js?1577384049" type="text/javascript"></script>
+ <script src="/javascripts/jscalendar/calendar-setup.js?1577384049" type="text/javascript"></script>
+ <script src="/javascripts/jscalendar/lang/calendar-br.js?1577384049" type="text/javascript"></script>
+ <script src="/javascripts/niftycube.js?1577384049" type="text/javascript"></script>
+ <script src="/javascripts/behaviour.js?1577384049" type="text/javascript"></script>
+ <script src="/javascripts/menuEvents.js?1577384049" type="text/javascript"></script>
+ <script src="/javascripts/textareaMaxlength.js?1577384049" type="text/javascript"></script>
+ <script src="/javascripts/application.js?1577384049" type="text/javascript"></script>
+ <script src="/javascripts/masks.js?1577384049" type="text/javascript"></script>
+ <script src="/javascripts/event.js?1577384049" type="text/javascript"></script>
+ <script src="/javascripts/maskInput.js?1577384049" type="text/javascript"></script>
+ <script src="/javascripts/jsTabbedPanel.js?1577384049" type="text/javascript"></script>
+ <script src="/javascripts/relatorioCustosProjetosTipo.js?1577384049" type="text/javascript"></script>
+ <script src="/javascripts/inPlaceEditorEmpty.js?1577384049" type="text/javascript"></script>
+ <script src="/javascripts/table.js?1577384049" type="text/javascript"></script>
+</head>
+<body>
+ <div id="loading" style="display: none"></div>
+ <div id="wrap">
+  <div id="content">
+    <div id="all">
+      <div id="header">
+        <div class="logo">
+          <a href="http://dextra.com.br"><img alt="Dextra Sistemas" src="/images/logo_dextra.png?1577384049" /></a>
+        </div>
+        <div class="slogan">
+          Sistema de Gestão de Projetos
+        </div>
+      </div>
+<!-- ==========================================================================
+     Menu de navegao
+     ========================================================================== -->
+     <div class="nav">
+       <ul class="menu" id="menu">
+        <li id="menu_inicial">
+          
+          <a href="/">Inicial</a>
+          
+        </li>
+        
+        <li>
+          <a href="/cadastro">Cadastro</a>
+        </li>
+        <li id="menu_colaborador">
+         
+         
+         
+
+         
+      <a href="/registros/new" class="active">Apontamentos</a>
+      <a href="/sumario_horas/filtro_colaborador/2" class="">Sum&aacute;rio de horas</a>      
+      <a href="/colaborador/atividades" class="">Atividades abertas</a>      
+    </li>
+    
+
+    
+    
+    
+      
+
+      
+
+       
+
+         
+          
+
+           
+
+           
+           <li><a href="/alocacoes/exibe">Aloca&ccedil;&otilde;es</a></li>
+           <li id="menu_logout">
+             <a href="/login/logout" onclick="if (confirm('Deseja realmente efetuar logout ?')) { var f = document.createElement('form'); f.style.display = 'none'; this.parentNode.appendChild(f); f.method = 'POST'; f.action = this.href;f.submit(); };return false;">Logout </a>           </li>
+           
+         </ul>
+       </div>
+       <div align="right">
+         <span id='mostra_usuario_nome'>
+          Leandro Paes de Lima<span> </span>
+          <a href="/login/logout" onclick="if (confirm('Deseja realmente efetuar logout ?')) { var f = document.createElement('form'); f.style.display = 'none'; this.parentNode.appendChild(f); f.method = 'POST'; f.action = this.href;f.submit(); };return false;"><img alt="Logout" src="/images/logout.png?1577384049" /></a>        </span>
+      </div>
+<!-- ==========================================================================
+     Fim do menu de navegao
+     ========================================================================== -->
+      <a href="https://connect.dextra.com.br/manual/pma"><label class="sistem_notice" id="sistem_notice">Dúvidas com o novo formato de apontamentos?</label></a>     
+      <div id="main"><a name="top"></a>
+      <div id="navigation_info" class="titsec">
+        
+      </div>
+      <div id="text">
+        
+          
+        
+        
+        
+        <p class='warn' id="msgNotice"> Já existe um registro cadastrado para esse dia no intervalo informado. Favor verifique e tente novamente.</p>
+        
+        
+        
+        
+
+<!-- ==========================================================================
+     Insercao do layout da action detro do layout da aplicao
+     ========================================================================== -->
+     <script src="/javascripts/registroEvents.js?1577384049" type="text/javascript"></script>
+<script src="/javascripts/application.js?1577384049" type="text/javascript"></script>
+<table id="table_apontamento_master">
+  <tr>
+    <td id="table_apontamento_novo_apontamento">
+      
+        <div class="form_apontamento">
+          <form action="/registros/create" method="post">
+            <fieldset id="novo_apontamento">
+              <legend>Novo Apontamento</legend>
+              <br />
+              <table id="table_apontamento">
+  <colgroup>
+    <col>
+    <col>
+    <col>
+    <col class="descricao">
+  </colgroup>
+  <tr>
+    <td><label for="registro_true_date">Data</label></td>
+    <td><label for="registro_inicio">Início</label></td>
+    <td><label for="registro_fim">Fim</label></td>
+    <td><label class="registro_descricao" for="registro_descricao">Descrição</label></td>
+  </tr>
+  <tr>
+    <td class="calendarDateField">
+      <input align="center" id="registro_true_date" maxlength="10" name="registro[true_date]" onkeyUp="teclaAtalho(event), mskDate(this,event)" size="10" style="background='#F5F5F5';" type="text" value="30/01/2020" />
+
+      <a href="return false" id="calendar_index"><img align="absbottom" alt="" border="0" height="20" onClick="this.style = 'hidden';" src="/images/cal.gif?1577384049" width="20" /></a>
+      <script type="text/javascript">
+        Calendar.setup({
+        inputField  : "registro_true_date",
+        button      : "calendar_index",
+        align       : "Tr",
+        ifFormat    : "%d/%m/%Y",
+        daFormat    : "%d/%m/%Y"
+        });
+      </script>
+    </td>
+    <td>
+      <input id="registro_inicio" maxlength="5" name="registro[inicio]" onKeyPress="mascara(this,mskHour)" size="5" type="text" value="08:00" />
+    </td>
+    <td>
+      <input id="registro_fim" maxlength="5" name="registro[fim]" onKeyPress="mascara(this,mskHour)" size="5" type="text" value="12:00" />
+    </td>
+    <td rowspan="5">
+      <div class="registro_descricao" id="desc">
+        <textarea class="descricao" cols="30" id="registro_descricao" name="registro[descricao]" rows="5">Desenvolvimento Dafiti</textarea>
+      </div>
+    </td>
+  </tr>
+  <tr>
+    <td><label for="registro_projeto_id">Projeto</label></td>
+  </tr>
+  <tr>
+    <td colspan="3">
+      <div id="combo_projetos">
+        <span id="dd_projetos">
+          <select id="registro_projeto_id" name="registro[projeto_id]" onChange="comboLoading('atividade','registro_atividade_id');
+          new Ajax.Updater('atividade',
+          '/registros/set_atividade?projeto_id=' +   this.value,
+          {asynchronous:true, evalScripts:true});"><option value=""></option>
+<option value="959" selected="selected">Dafiti: Squads Dafiti</option>
+<option value="35">Dextra: Capacitação Interna</option>
+<option value="577">Dextra: RH - Acompanhamento de Clima</option>
+<option value="575">Dextra: RH - Administração de Pessoal</option>
+<option value="574">Dextra: RH - Desenvolvimento Organizacional</option>
+<option value="576">Dextra: RH - Eventos/Reuniões</option>
+<option value="573">Dextra: RH - Recrutamento e Seleção</option>
+<option value="390">Dextra: TI | Melhoria Contínua</option>
+<option value="908">Dextra: Treinamentos e eventos</option></select>
+        </span>
+      </div>
+    </td>
+  </tr>
+  <tr>
+    <td><label for="registro_atividade_id">Atividade</label></td>
+  </tr>
+  <tr>
+    <td colspan="3" id="atividade">
+      <div id="combo_atividades">
+        <select id="registro_atividade_id" name="registro[atividade_id]"><option value=""></option>
+<option value="9281">Block</option>
+<option value="8915" selected="selected">Desenvolvimento</option>
+<option value="8855">Outras</option></select>
+    </div>
+    </td>
+  </tr>
+  <tr>
+    <td colspan="4" align="right">
+      <input class="button" id="addPointing" name="commit" type="submit" value="Salvar" />
+    </td>
+  </tr>
+</table>
+
+            </fieldset>
+        </div>
+        </form>
+      
+    </td>
+    <td id="table_apontamento_info">
+      <div class="lista_apontamentos" id="info_apontamentos">
+        <legend>Resumo de horas</legend>
+        <br />
+        <div id="toogleId">
+          
+      <table id='info_mensal_registros' class='lista infoAp'>
+        <tr>
+          <th>M&ecirc;s</th>
+          <th><label>Horas Previstas(at&eacute; hoje)</label></th>
+          <th><label>Horas Apontadas(em Projetos)</th>
+        </tr>
+        <tr class='odd'>
+          <td><a href="/sumario_horas/sumario/2?filtro%5Busuario_id%5D=1365&amp;mes_fim=2020-01-01&amp;mes_inicio=2020-01-01">Janeiro</a></td>
+          <td>168:00</td>
+          <td>170:30</td>
+        </tr>
+        <tr class='even'>
+          <td><a href="/sumario_horas/sumario/2?filtro%5Busuario_id%5D=1365&amp;mes_fim=2019-12-01&amp;mes_inicio=2019-12-01">Dezembro</a></td>
+          <td>168:00</td>
+          <td>148:00</td>
+        </tr>
+      </table>
+      <div class='saldo'>
+        <span id=negativo class='pointer' title='Saldo de banco de horas previsto para o fim do m&ecirc;s, considerando que todas as horas apontadas at&eacute; hoje sejam validadas e aprovadas.'>Saldo de banco de horas previsto:</span>
+          -09:30
+      </div>
+    
+        </div>
+      </div>
+    </td>
+  </tr>
+</table>
+
+
+  <div id="list_registros" class="lista_apontamentos">
+  <h1 id='title_mes_corrente'> <a href="/sumario_horas/sumario/2?filtro%5Busuario_id%5D=1365&amp;mes_fim=2020-01-01&amp;mes_inicio=2020-01-01">Apontamentos</a> </h1>
+  <table id="tabela_apontamentos_registro" class="tabela_apontamentos lista">
+    <colgroup>
+      <col class="dia_semana">
+      <col class="data">
+      <col class="horas">
+      <col class="inicio">
+      <col class="fim">
+      <col class="horas">
+      <col class="projeto">
+      <col class="atividade">
+      <col class="descricao">
+      <col class="situacao">      
+    </colgroup>
+    <thead>
+      <tr>
+        <th>Dia</th>
+        <th>Data</th>
+        <th>Total</th>
+        <th>Início</th>
+        <th>Fim</th>
+        <th>Horas</th>
+        <th>Projeto</th>
+        <th>Atividade</th>
+        <th>Descrição</th>
+        <th>Situação</th>
+        <th>Ações</th>
+      </tr>
+    </thead>
+    <tbody>
+      
+        <tr class="even">
+          <td class="dia" rowspan="2">Qui</td>
+          <td class="data" rowspan="2">30/01/2020</td>
+          <td class="horas" rowspan="2">04:00</td>
+          
+            <tr class="even">
+              <div class="registro">
+  
+
+
+
+  
+    <td align="center">
+      08:00
+    </td>
+    <td align="center">12:00</td>
+  
+  <td align="center">
+    04:00
+  </td>
+
+  <td class="projeto">Dafiti: Squads Dafiti</td>
+  <td class="atividade">Desenvolvimento</td>
+  <td class="descricao"><div class="descricao_content">Desenvolvimento Dafiti</div></td>
+  <td class="situacao">
+    <div class="descricao_content">
+      
+        <p>Aguardando aprovação</p>
+      
+    </div>
+  </td>
+  
+    <td class="acoes"><table class="table_acoes">
+  <tr class="botoesAcao">
+    
+      <td class="btnEditar">
+        <a href="#" onclick="Modalbox.show('/registros/edit', 
+        {'height': '', 'width': '600', title:'Editar Apontamento', params:{id:'671088'}}); return false;">Editar</a>
+
+			</td>
+      <td class="btnExcluir">
+        <a href="/registros/destroy/671088" onclick="if (confirm('Tem certeza que deseja excluir este apontamento? Esta operação não pode ser desfeita.')) { var f = document.createElement('form'); f.style.display = 'none'; this.parentNode.appendChild(f); f.method = 'POST'; f.action = this.href;var m = document.createElement('input'); m.setAttribute('type', 'hidden'); m.setAttribute('name', '_method'); m.setAttribute('value', 'delete'); f.appendChild(m);f.submit(); };return false;" title="Excluir apontamento">Excluir</a>
+      </td>
+    
+  </tr>
+</table></td> 
+  
+</div>
+            </tr>
+          
+        </tr>
+      
+        <tr class="odd">
+          <td class="dia" rowspan="2">Qua</td>
+          <td class="data" rowspan="2">29/01/2020</td>
+          <td class="horas" rowspan="2">03:00</td>
+          
+            <tr class="odd">
+              <div class="registro">
+  
+
+
+
+  
+    <td align="center">
+      09:00
+    </td>
+    <td align="center">12:00</td>
+  
+  <td align="center">
+    03:00
+  </td>
+
+  <td class="projeto">Dafiti: Squads Dafiti</td>
+  <td class="atividade">Desenvolvimento</td>
+  <td class="descricao"><div class="descricao_content">Desenvolvimento Dafiti</div></td>
+  <td class="situacao">
+    <div class="descricao_content">
+      
+        <p>Aguardando aprovação</p>
+      
+    </div>
+  </td>
+  
+    <td class="acoes"><table class="table_acoes">
+  <tr class="botoesAcao">
+    
+      <td class="btnEditar">
+        <a href="#" onclick="Modalbox.show('/registros/edit', 
+        {'height': '', 'width': '600', title:'Editar Apontamento', params:{id:'670549'}}); return false;">Editar</a>
+
+			</td>
+      <td class="btnExcluir">
+        <a href="/registros/destroy/670549" onclick="if (confirm('Tem certeza que deseja excluir este apontamento? Esta operação não pode ser desfeita.')) { var f = document.createElement('form'); f.style.display = 'none'; this.parentNode.appendChild(f); f.method = 'POST'; f.action = this.href;var m = document.createElement('input'); m.setAttribute('type', 'hidden'); m.setAttribute('name', '_method'); m.setAttribute('value', 'delete'); f.appendChild(m);f.submit(); };return false;" title="Excluir apontamento">Excluir</a>
+      </td>
+    
+  </tr>
+</table></td> 
+  
+</div>
+            </tr>
+          
+        </tr>
+      
+        <tr class="even">
+          <td class="dia" rowspan="3">Ter</td>
+          <td class="data" rowspan="3">28/01/2020</td>
+          <td class="horas" rowspan="3">08:00</td>
+          
+            <tr class="even">
+              <div class="registro">
+  
+
+
+
+  
+    <td align="center">
+      13:00
+    </td>
+    <td align="center">18:00</td>
+  
+  <td align="center">
+    05:00
+  </td>
+
+  <td class="projeto">Dafiti: Squads Dafiti</td>
+  <td class="atividade">Desenvolvimento</td>
+  <td class="descricao"><div class="descricao_content">Desenvolvimento Dafiti, Sniper</div></td>
+  <td class="situacao">
+    <div class="descricao_content">
+      
+        <p>Aguardando aprovação</p>
+      
+    </div>
+  </td>
+  
+    <td class="acoes"><table class="table_acoes">
+  <tr class="botoesAcao">
+    
+      <td class="btnEditar">
+        <a href="#" onclick="Modalbox.show('/registros/edit', 
+        {'height': '', 'width': '600', title:'Editar Apontamento', params:{id:'670548'}}); return false;">Editar</a>
+
+			</td>
+      <td class="btnExcluir">
+        <a href="/registros/destroy/670548" onclick="if (confirm('Tem certeza que deseja excluir este apontamento? Esta operação não pode ser desfeita.')) { var f = document.createElement('form'); f.style.display = 'none'; this.parentNode.appendChild(f); f.method = 'POST'; f.action = this.href;var m = document.createElement('input'); m.setAttribute('type', 'hidden'); m.setAttribute('name', '_method'); m.setAttribute('value', 'delete'); f.appendChild(m);f.submit(); };return false;" title="Excluir apontamento">Excluir</a>
+      </td>
+    
+  </tr>
+</table></td> 
+  
+</div>
+            </tr>
+          
+            <tr class="even">
+              <div class="registro">
+  
+
+
+
+  
+    <td align="center">
+      09:00
+    </td>
+    <td align="center">12:00</td>
+  
+  <td align="center">
+    03:00
+  </td>
+
+  <td class="projeto">Dafiti: Squads Dafiti</td>
+  <td class="atividade">Desenvolvimento</td>
+  <td class="descricao"><div class="descricao_content">Desenvolvimento Dafiti, Sniper</div></td>
+  <td class="situacao">
+    <div class="descricao_content">
+      
+        <p>Aguardando aprovação</p>
+      
+    </div>
+  </td>
+  
+    <td class="acoes"><table class="table_acoes">
+  <tr class="botoesAcao">
+    
+      <td class="btnEditar">
+        <a href="#" onclick="Modalbox.show('/registros/edit', 
+        {'height': '', 'width': '600', title:'Editar Apontamento', params:{id:'670547'}}); return false;">Editar</a>
+
+			</td>
+      <td class="btnExcluir">
+        <a href="/registros/destroy/670547" onclick="if (confirm('Tem certeza que deseja excluir este apontamento? Esta operação não pode ser desfeita.')) { var f = document.createElement('form'); f.style.display = 'none'; this.parentNode.appendChild(f); f.method = 'POST'; f.action = this.href;var m = document.createElement('input'); m.setAttribute('type', 'hidden'); m.setAttribute('name', '_method'); m.setAttribute('value', 'delete'); f.appendChild(m);f.submit(); };return false;" title="Excluir apontamento">Excluir</a>
+      </td>
+    
+  </tr>
+</table></td> 
+  
+</div>
+            </tr>
+          
+        </tr>
+      
+        <tr class="odd">
+          <td class="dia" rowspan="3">Seg</td>
+          <td class="data" rowspan="3">27/01/2020</td>
+          <td class="horas" rowspan="3">08:00</td>
+          
+            <tr class="odd">
+              <div class="registro">
+  
+
+
+
+  
+    <td align="center">
+      13:00
+    </td>
+    <td align="center">18:00</td>
+  
+  <td align="center">
+    05:00
+  </td>
+
+  <td class="projeto">Dafiti: Squads Dafiti</td>
+  <td class="atividade">Desenvolvimento</td>
+  <td class="descricao"><div class="descricao_content">Desenvolvimento Dafiti</div></td>
+  <td class="situacao">
+    <div class="descricao_content">
+      
+        <p>Aguardando aprovação</p>
+      
+    </div>
+  </td>
+  
+    <td class="acoes"><table class="table_acoes">
+  <tr class="botoesAcao">
+    
+      <td class="btnEditar">
+        <a href="#" onclick="Modalbox.show('/registros/edit', 
+        {'height': '', 'width': '600', title:'Editar Apontamento', params:{id:'670546'}}); return false;">Editar</a>
+
+			</td>
+      <td class="btnExcluir">
+        <a href="/registros/destroy/670546" onclick="if (confirm('Tem certeza que deseja excluir este apontamento? Esta operação não pode ser desfeita.')) { var f = document.createElement('form'); f.style.display = 'none'; this.parentNode.appendChild(f); f.method = 'POST'; f.action = this.href;var m = document.createElement('input'); m.setAttribute('type', 'hidden'); m.setAttribute('name', '_method'); m.setAttribute('value', 'delete'); f.appendChild(m);f.submit(); };return false;" title="Excluir apontamento">Excluir</a>
+      </td>
+    
+  </tr>
+</table></td> 
+  
+</div>
+            </tr>
+          
+            <tr class="odd">
+              <div class="registro">
+  
+
+
+
+  
+    <td align="center">
+      09:00
+    </td>
+    <td align="center">12:00</td>
+  
+  <td align="center">
+    03:00
+  </td>
+
+  <td class="projeto">Dafiti: Squads Dafiti</td>
+  <td class="atividade">Desenvolvimento</td>
+  <td class="descricao"><div class="descricao_content">Desenvolvimento Dafiti</div></td>
+  <td class="situacao">
+    <div class="descricao_content">
+      
+        <p>Aguardando aprovação</p>
+      
+    </div>
+  </td>
+  
+    <td class="acoes"><table class="table_acoes">
+  <tr class="botoesAcao">
+    
+      <td class="btnEditar">
+        <a href="#" onclick="Modalbox.show('/registros/edit', 
+        {'height': '', 'width': '600', title:'Editar Apontamento', params:{id:'670545'}}); return false;">Editar</a>
+
+			</td>
+      <td class="btnExcluir">
+        <a href="/registros/destroy/670545" onclick="if (confirm('Tem certeza que deseja excluir este apontamento? Esta operação não pode ser desfeita.')) { var f = document.createElement('form'); f.style.display = 'none'; this.parentNode.appendChild(f); f.method = 'POST'; f.action = this.href;var m = document.createElement('input'); m.setAttribute('type', 'hidden'); m.setAttribute('name', '_method'); m.setAttribute('value', 'delete'); f.appendChild(m);f.submit(); };return false;" title="Excluir apontamento">Excluir</a>
+      </td>
+    
+  </tr>
+</table></td> 
+  
+</div>
+            </tr>
+          
+        </tr>
+      
+        <tr class="even">
+          <td class="dia" rowspan="3">Sex</td>
+          <td class="data" rowspan="3">24/01/2020</td>
+          <td class="horas" rowspan="3">08:30</td>
+          
+            <tr class="even">
+              <div class="registro">
+  
+
+
+
+  
+    <td align="center">
+      13:00
+    </td>
+    <td align="center">18:30</td>
+  
+  <td align="center">
+    05:30
+  </td>
+
+  <td class="projeto">Dafiti: Squads Dafiti</td>
+  <td class="atividade">Desenvolvimento</td>
+  <td class="descricao"><div class="descricao_content">Desenvolvimento Dafiti
+Repondo banco</div></td>
+  <td class="situacao">
+    <div class="descricao_content">
+      
+        <p>Aguardando aprovação</p>
+      
+    </div>
+  </td>
+  
+    <td class="acoes"><table class="table_acoes">
+  <tr class="botoesAcao">
+    
+      <td class="btnEditarDisabled"><a href="#">Editar</a></td>
+      <td class="btnExcluirDisabled"><a href="#">Excluir</a></td>
+    
+  </tr>
+</table></td> 
+  
+</div>
+            </tr>
+          
+            <tr class="even">
+              <div class="registro">
+  
+
+
+
+  
+    <td align="center">
+      09:00
+    </td>
+    <td align="center">12:00</td>
+  
+  <td align="center">
+    03:00
+  </td>
+
+  <td class="projeto">Dafiti: Squads Dafiti</td>
+  <td class="atividade">Desenvolvimento</td>
+  <td class="descricao"><div class="descricao_content">Desenvolvimento Dafiti
+</div></td>
+  <td class="situacao">
+    <div class="descricao_content">
+      
+        <p>Aguardando aprovação</p>
+      
+    </div>
+  </td>
+  
+    <td class="acoes"><table class="table_acoes">
+  <tr class="botoesAcao">
+    
+      <td class="btnEditarDisabled"><a href="#">Editar</a></td>
+      <td class="btnExcluirDisabled"><a href="#">Excluir</a></td>
+    
+  </tr>
+</table></td> 
+  
+</div>
+            </tr>
+          
+        </tr>
+      
+        <tr class="odd">
+          <td class="dia" rowspan="3">Qui</td>
+          <td class="data" rowspan="3">23/01/2020</td>
+          <td class="horas" rowspan="3">08:30</td>
+          
+            <tr class="odd">
+              <div class="registro">
+  
+
+
+
+  
+    <td align="center">
+      13:00
+    </td>
+    <td align="center">18:30</td>
+  
+  <td align="center">
+    05:30
+  </td>
+
+  <td class="projeto">Dafiti: Squads Dafiti</td>
+  <td class="atividade">Desenvolvimento</td>
+  <td class="descricao"><div class="descricao_content">Desenvolvimento Dafiti
+Sniper</div></td>
+  <td class="situacao">
+    <div class="descricao_content">
+      
+        <p>Aguardando aprovação</p>
+      
+    </div>
+  </td>
+  
+    <td class="acoes"><table class="table_acoes">
+  <tr class="botoesAcao">
+    
+      <td class="btnEditarDisabled"><a href="#">Editar</a></td>
+      <td class="btnExcluirDisabled"><a href="#">Excluir</a></td>
+    
+  </tr>
+</table></td> 
+  
+</div>
+            </tr>
+          
+            <tr class="odd">
+              <div class="registro">
+  
+
+
+
+  
+    <td align="center">
+      09:00
+    </td>
+    <td align="center">12:00</td>
+  
+  <td align="center">
+    03:00
+  </td>
+
+  <td class="projeto">Dafiti: Squads Dafiti</td>
+  <td class="atividade">Desenvolvimento</td>
+  <td class="descricao"><div class="descricao_content">Desenvolvimento Dafiti
+Sniper</div></td>
+  <td class="situacao">
+    <div class="descricao_content">
+      
+        <p>Aguardando aprovação</p>
+      
+    </div>
+  </td>
+  
+    <td class="acoes"><table class="table_acoes">
+  <tr class="botoesAcao">
+    
+      <td class="btnEditarDisabled"><a href="#">Editar</a></td>
+      <td class="btnExcluirDisabled"><a href="#">Excluir</a></td>
+    
+  </tr>
+</table></td> 
+  
+</div>
+            </tr>
+          
+        </tr>
+      
+        <tr class="even">
+          <td class="dia" rowspan="3">Qua</td>
+          <td class="data" rowspan="3">22/01/2020</td>
+          <td class="horas" rowspan="3">08:00</td>
+          
+            <tr class="even">
+              <div class="registro">
+  
+
+
+
+  
+    <td align="center">
+      13:00
+    </td>
+    <td align="center">18:30</td>
+  
+  <td align="center">
+    05:30
+  </td>
+
+  <td class="projeto">Dafiti: Squads Dafiti</td>
+  <td class="atividade">Desenvolvimento</td>
+  <td class="descricao"><div class="descricao_content">Desenvolvimento Dafiti
+</div></td>
+  <td class="situacao">
+    <div class="descricao_content">
+      
+        <p>Aguardando aprovação</p>
+      
+    </div>
+  </td>
+  
+    <td class="acoes"><table class="table_acoes">
+  <tr class="botoesAcao">
+    
+      <td class="btnEditarDisabled"><a href="#">Editar</a></td>
+      <td class="btnExcluirDisabled"><a href="#">Excluir</a></td>
+    
+  </tr>
+</table></td> 
+  
+</div>
+            </tr>
+          
+            <tr class="even">
+              <div class="registro">
+  
+
+
+
+  
+    <td align="center">
+      09:30
+    </td>
+    <td align="center">12:00</td>
+  
+  <td align="center">
+    02:30
+  </td>
+
+  <td class="projeto">Dafiti: Squads Dafiti</td>
+  <td class="atividade">Desenvolvimento</td>
+  <td class="descricao"><div class="descricao_content">Desenvolvimento Dafiti
+</div></td>
+  <td class="situacao">
+    <div class="descricao_content">
+      
+        <p>Aguardando aprovação</p>
+      
+    </div>
+  </td>
+  
+    <td class="acoes"><table class="table_acoes">
+  <tr class="botoesAcao">
+    
+      <td class="btnEditarDisabled"><a href="#">Editar</a></td>
+      <td class="btnExcluirDisabled"><a href="#">Excluir</a></td>
+    
+  </tr>
+</table></td> 
+  
+</div>
+            </tr>
+          
+        </tr>
+      
+        <tr class="odd">
+          <td class="dia" rowspan="3">Ter</td>
+          <td class="data" rowspan="3">21/01/2020</td>
+          <td class="horas" rowspan="3">08:40</td>
+          
+            <tr class="odd">
+              <div class="registro">
+  
+
+
+
+  
+    <td align="center">
+      13:00
+    </td>
+    <td align="center">18:40</td>
+  
+  <td align="center">
+    05:40
+  </td>
+
+  <td class="projeto">Dafiti: Squads Dafiti</td>
+  <td class="atividade">Desenvolvimento</td>
+  <td class="descricao"><div class="descricao_content">Desenvolvimento Dafiti
+Repondo banco</div></td>
+  <td class="situacao">
+    <div class="descricao_content">
+      
+        <p>Aguardando aprovação</p>
+      
+    </div>
+  </td>
+  
+    <td class="acoes"><table class="table_acoes">
+  <tr class="botoesAcao">
+    
+      <td class="btnEditarDisabled"><a href="#">Editar</a></td>
+      <td class="btnExcluirDisabled"><a href="#">Excluir</a></td>
+    
+  </tr>
+</table></td> 
+  
+</div>
+            </tr>
+          
+            <tr class="odd">
+              <div class="registro">
+  
+
+
+
+  
+    <td align="center">
+      09:00
+    </td>
+    <td align="center">12:00</td>
+  
+  <td align="center">
+    03:00
+  </td>
+
+  <td class="projeto">Dafiti: Squads Dafiti</td>
+  <td class="atividade">Desenvolvimento</td>
+  <td class="descricao"><div class="descricao_content">Desenvolvimento Dafiti
+</div></td>
+  <td class="situacao">
+    <div class="descricao_content">
+      
+        <p>Aguardando aprovação</p>
+      
+    </div>
+  </td>
+  
+    <td class="acoes"><table class="table_acoes">
+  <tr class="botoesAcao">
+    
+      <td class="btnEditarDisabled"><a href="#">Editar</a></td>
+      <td class="btnExcluirDisabled"><a href="#">Excluir</a></td>
+    
+  </tr>
+</table></td> 
+  
+</div>
+            </tr>
+          
+        </tr>
+      
+        <tr class="even">
+          <td class="dia" rowspan="3">Seg</td>
+          <td class="data" rowspan="3">20/01/2020</td>
+          <td class="horas" rowspan="3">08:00</td>
+          
+            <tr class="even">
+              <div class="registro">
+  
+
+
+
+  
+    <td align="center">
+      13:00
+    </td>
+    <td align="center">18:00</td>
+  
+  <td align="center">
+    05:00
+  </td>
+
+  <td class="projeto">Dafiti: Squads Dafiti</td>
+  <td class="atividade">Desenvolvimento</td>
+  <td class="descricao"><div class="descricao_content">Desenvolvimento Dafiti
+</div></td>
+  <td class="situacao">
+    <div class="descricao_content">
+      
+        <p>Aguardando aprovação</p>
+      
+    </div>
+  </td>
+  
+    <td class="acoes"><table class="table_acoes">
+  <tr class="botoesAcao">
+    
+      <td class="btnEditarDisabled"><a href="#">Editar</a></td>
+      <td class="btnExcluirDisabled"><a href="#">Excluir</a></td>
+    
+  </tr>
+</table></td> 
+  
+</div>
+            </tr>
+          
+            <tr class="even">
+              <div class="registro">
+  
+
+
+
+  
+    <td align="center">
+      09:00
+    </td>
+    <td align="center">12:00</td>
+  
+  <td align="center">
+    03:00
+  </td>
+
+  <td class="projeto">Dafiti: Squads Dafiti</td>
+  <td class="atividade">Desenvolvimento</td>
+  <td class="descricao"><div class="descricao_content">Desenvolvimento Dafiti
+</div></td>
+  <td class="situacao">
+    <div class="descricao_content">
+      
+        <p>Aguardando aprovação</p>
+      
+    </div>
+  </td>
+  
+    <td class="acoes"><table class="table_acoes">
+  <tr class="botoesAcao">
+    
+      <td class="btnEditarDisabled"><a href="#">Editar</a></td>
+      <td class="btnExcluirDisabled"><a href="#">Excluir</a></td>
+    
+  </tr>
+</table></td> 
+  
+</div>
+            </tr>
+          
+        </tr>
+      
+        <tr class="odd">
+          <td class="dia" rowspan="3">Sex</td>
+          <td class="data" rowspan="3">17/01/2020</td>
+          <td class="horas" rowspan="3">08:40</td>
+          
+            <tr class="odd">
+              <div class="registro">
+  
+
+
+
+  
+    <td align="center">
+      13:00
+    </td>
+    <td align="center">18:40</td>
+  
+  <td align="center">
+    05:40
+  </td>
+
+  <td class="projeto">Dafiti: Squads Dafiti</td>
+  <td class="atividade">Desenvolvimento</td>
+  <td class="descricao"><div class="descricao_content">Desenvolvimento Dafiti</div></td>
+  <td class="situacao">
+    <div class="descricao_content">
+      
+        <p>Aguardando aprovação</p>
+      
+    </div>
+  </td>
+  
+    <td class="acoes"><table class="table_acoes">
+  <tr class="botoesAcao">
+    
+      <td class="btnEditarDisabled"><a href="#">Editar</a></td>
+      <td class="btnExcluirDisabled"><a href="#">Excluir</a></td>
+    
+  </tr>
+</table></td> 
+  
+</div>
+            </tr>
+          
+            <tr class="odd">
+              <div class="registro">
+  
+
+
+
+  
+    <td align="center">
+      09:00
+    </td>
+    <td align="center">12:00</td>
+  
+  <td align="center">
+    03:00
+  </td>
+
+  <td class="projeto">Dafiti: Squads Dafiti</td>
+  <td class="atividade">Desenvolvimento</td>
+  <td class="descricao"><div class="descricao_content">Desenvolvimento Dafiti</div></td>
+  <td class="situacao">
+    <div class="descricao_content">
+      
+        <p>Aguardando aprovação</p>
+      
+    </div>
+  </td>
+  
+    <td class="acoes"><table class="table_acoes">
+  <tr class="botoesAcao">
+    
+      <td class="btnEditarDisabled"><a href="#">Editar</a></td>
+      <td class="btnExcluirDisabled"><a href="#">Excluir</a></td>
+    
+  </tr>
+</table></td> 
+  
+</div>
+            </tr>
+          
+        </tr>
+      
+        <tr class="even">
+          <td class="dia" rowspan="3">Qui</td>
+          <td class="data" rowspan="3">16/01/2020</td>
+          <td class="horas" rowspan="3">08:30</td>
+          
+            <tr class="even">
+              <div class="registro">
+  
+
+
+
+  
+    <td align="center">
+      13:00
+    </td>
+    <td align="center">18:30</td>
+  
+  <td align="center">
+    05:30
+  </td>
+
+  <td class="projeto">Dafiti: Squads Dafiti</td>
+  <td class="atividade">Desenvolvimento</td>
+  <td class="descricao"><div class="descricao_content">Desenvolvimento Dafiti
+Sniper</div></td>
+  <td class="situacao">
+    <div class="descricao_content">
+      
+        <p>Aguardando aprovação</p>
+      
+    </div>
+  </td>
+  
+    <td class="acoes"><table class="table_acoes">
+  <tr class="botoesAcao">
+    
+      <td class="btnEditarDisabled"><a href="#">Editar</a></td>
+      <td class="btnExcluirDisabled"><a href="#">Excluir</a></td>
+    
+  </tr>
+</table></td> 
+  
+</div>
+            </tr>
+          
+            <tr class="even">
+              <div class="registro">
+  
+
+
+
+  
+    <td align="center">
+      09:00
+    </td>
+    <td align="center">12:00</td>
+  
+  <td align="center">
+    03:00
+  </td>
+
+  <td class="projeto">Dafiti: Squads Dafiti</td>
+  <td class="atividade">Desenvolvimento</td>
+  <td class="descricao"><div class="descricao_content">Desenvolvimento Dafiti
+Sniper</div></td>
+  <td class="situacao">
+    <div class="descricao_content">
+      
+        <p>Aguardando aprovação</p>
+      
+    </div>
+  </td>
+  
+    <td class="acoes"><table class="table_acoes">
+  <tr class="botoesAcao">
+    
+      <td class="btnEditarDisabled"><a href="#">Editar</a></td>
+      <td class="btnExcluirDisabled"><a href="#">Excluir</a></td>
+    
+  </tr>
+</table></td> 
+  
+</div>
+            </tr>
+          
+        </tr>
+      
+        <tr class="odd">
+          <td class="dia" rowspan="3">Qua</td>
+          <td class="data" rowspan="3">15/01/2020</td>
+          <td class="horas" rowspan="3">08:30</td>
+          
+            <tr class="odd">
+              <div class="registro">
+  
+
+
+
+  
+    <td align="center">
+      13:00
+    </td>
+    <td align="center">18:00</td>
+  
+  <td align="center">
+    05:00
+  </td>
+
+  <td class="projeto">Dafiti: Squads Dafiti</td>
+  <td class="atividade">Desenvolvimento</td>
+  <td class="descricao"><div class="descricao_content">Desenvolvimento Dafiti</div></td>
+  <td class="situacao">
+    <div class="descricao_content">
+      
+        <p>Aguardando aprovação</p>
+      
+    </div>
+  </td>
+  
+    <td class="acoes"><table class="table_acoes">
+  <tr class="botoesAcao">
+    
+      <td class="btnEditarDisabled"><a href="#">Editar</a></td>
+      <td class="btnExcluirDisabled"><a href="#">Excluir</a></td>
+    
+  </tr>
+</table></td> 
+  
+</div>
+            </tr>
+          
+            <tr class="odd">
+              <div class="registro">
+  
+
+
+
+  
+    <td align="center">
+      08:30
+    </td>
+    <td align="center">12:00</td>
+  
+  <td align="center">
+    03:30
+  </td>
+
+  <td class="projeto">Dafiti: Squads Dafiti</td>
+  <td class="atividade">Desenvolvimento</td>
+  <td class="descricao"><div class="descricao_content">Desenvolvimento Dafiti</div></td>
+  <td class="situacao">
+    <div class="descricao_content">
+      
+        <p>Aguardando aprovação</p>
+      
+    </div>
+  </td>
+  
+    <td class="acoes"><table class="table_acoes">
+  <tr class="botoesAcao">
+    
+      <td class="btnEditarDisabled"><a href="#">Editar</a></td>
+      <td class="btnExcluirDisabled"><a href="#">Excluir</a></td>
+    
+  </tr>
+</table></td> 
+  
+</div>
+            </tr>
+          
+        </tr>
+      
+        <tr class="even">
+          <td class="dia" rowspan="3">Ter</td>
+          <td class="data" rowspan="3">14/01/2020</td>
+          <td class="horas" rowspan="3">11:00</td>
+          
+            <tr class="even">
+              <div class="registro">
+  
+
+
+
+  
+    <td align="center">
+      14:00
+    </td>
+    <td align="center">21:00</td>
+  
+  <td align="center">
+    07:00
+  </td>
+
+  <td class="projeto">Dafiti: Squads Dafiti</td>
+  <td class="atividade">Reuniões</td>
+  <td class="descricao"><div class="descricao_content">Reunião na Dafiti sobre novo micro serviço (SUS)</div></td>
+  <td class="situacao">
+    <div class="descricao_content">
+      
+        <p>Aguardando aprovação</p>
+      
+    </div>
+  </td>
+  
+    <td class="acoes"><table class="table_acoes">
+  <tr class="botoesAcao">
+    
+      <td class="btnEditarDisabled"><a href="#">Editar</a></td>
+      <td class="btnExcluirDisabled"><a href="#">Excluir</a></td>
+    
+  </tr>
+</table></td> 
+  
+</div>
+            </tr>
+          
+            <tr class="even">
+              <div class="registro">
+  
+
+
+
+  
+    <td align="center">
+      08:00
+    </td>
+    <td align="center">12:00</td>
+  
+  <td align="center">
+    04:00
+  </td>
+
+  <td class="projeto">Dafiti: Squads Dafiti</td>
+  <td class="atividade">Reuniões</td>
+  <td class="descricao"><div class="descricao_content">Reunião na Dafiti sobre novo micro serviço (SUS)</div></td>
+  <td class="situacao">
+    <div class="descricao_content">
+      
+        <p>Aguardando aprovação</p>
+      
+    </div>
+  </td>
+  
+    <td class="acoes"><table class="table_acoes">
+  <tr class="botoesAcao">
+    
+      <td class="btnEditarDisabled"><a href="#">Editar</a></td>
+      <td class="btnExcluirDisabled"><a href="#">Excluir</a></td>
+    
+  </tr>
+</table></td> 
+  
+</div>
+            </tr>
+          
+        </tr>
+      
+        <tr class="odd">
+          <td class="dia" rowspan="3">Seg</td>
+          <td class="data" rowspan="3">13/01/2020</td>
+          <td class="horas" rowspan="3">08:00</td>
+          
+            <tr class="odd">
+              <div class="registro">
+  
+
+
+
+  
+    <td align="center">
+      13:00
+    </td>
+    <td align="center">18:00</td>
+  
+  <td align="center">
+    05:00
+  </td>
+
+  <td class="projeto">Dafiti: Squads Dafiti</td>
+  <td class="atividade">Desenvolvimento</td>
+  <td class="descricao"><div class="descricao_content">Desenvolvimento Dafiti
+</div></td>
+  <td class="situacao">
+    <div class="descricao_content">
+      
+        <p>Aguardando aprovação</p>
+      
+    </div>
+  </td>
+  
+    <td class="acoes"><table class="table_acoes">
+  <tr class="botoesAcao">
+    
+      <td class="btnEditarDisabled"><a href="#">Editar</a></td>
+      <td class="btnExcluirDisabled"><a href="#">Excluir</a></td>
+    
+  </tr>
+</table></td> 
+  
+</div>
+            </tr>
+          
+            <tr class="odd">
+              <div class="registro">
+  
+
+
+
+  
+    <td align="center">
+      09:00
+    </td>
+    <td align="center">12:00</td>
+  
+  <td align="center">
+    03:00
+  </td>
+
+  <td class="projeto">Dafiti: Squads Dafiti</td>
+  <td class="atividade">Desenvolvimento</td>
+  <td class="descricao"><div class="descricao_content">Desenvolvimento Dafiti
+</div></td>
+  <td class="situacao">
+    <div class="descricao_content">
+      
+        <p>Aguardando aprovação</p>
+      
+    </div>
+  </td>
+  
+    <td class="acoes"><table class="table_acoes">
+  <tr class="botoesAcao">
+    
+      <td class="btnEditarDisabled"><a href="#">Editar</a></td>
+      <td class="btnExcluirDisabled"><a href="#">Excluir</a></td>
+    
+  </tr>
+</table></td> 
+  
+</div>
+            </tr>
+          
+        </tr>
+      
+        <tr class="even">
+          <td class="dia" rowspan="3">Sex</td>
+          <td class="data" rowspan="3">10/01/2020</td>
+          <td class="horas" rowspan="3">09:10</td>
+          
+            <tr class="even">
+              <div class="registro">
+  
+
+
+
+  
+    <td align="center">
+      13:00
+    </td>
+    <td align="center">18:40</td>
+  
+  <td align="center">
+    05:40
+  </td>
+
+  <td class="projeto">Dafiti: Squads Dafiti</td>
+  <td class="atividade">Desenvolvimento</td>
+  <td class="descricao"><div class="descricao_content">Desenvolvimento Dafiti
+Repondo horas</div></td>
+  <td class="situacao">
+    <div class="descricao_content">
+      
+        <p>Aguardando aprovação</p>
+      
+    </div>
+  </td>
+  
+    <td class="acoes"><table class="table_acoes">
+  <tr class="botoesAcao">
+    
+      <td class="btnEditarDisabled"><a href="#">Editar</a></td>
+      <td class="btnExcluirDisabled"><a href="#">Excluir</a></td>
+    
+  </tr>
+</table></td> 
+  
+</div>
+            </tr>
+          
+            <tr class="even">
+              <div class="registro">
+  
+
+
+
+  
+    <td align="center">
+      08:30
+    </td>
+    <td align="center">12:00</td>
+  
+  <td align="center">
+    03:30
+  </td>
+
+  <td class="projeto">Dafiti: Squads Dafiti</td>
+  <td class="atividade">Desenvolvimento</td>
+  <td class="descricao"><div class="descricao_content">Desenvolvimento Dafiti
+
+</div></td>
+  <td class="situacao">
+    <div class="descricao_content">
+      
+        <p>Aguardando aprovação</p>
+      
+    </div>
+  </td>
+  
+    <td class="acoes"><table class="table_acoes">
+  <tr class="botoesAcao">
+    
+      <td class="btnEditarDisabled"><a href="#">Editar</a></td>
+      <td class="btnExcluirDisabled"><a href="#">Excluir</a></td>
+    
+  </tr>
+</table></td> 
+  
+</div>
+            </tr>
+          
+        </tr>
+      
+        <tr class="odd">
+          <td class="dia" rowspan="4">Qui</td>
+          <td class="data" rowspan="4">09/01/2020</td>
+          <td class="horas" rowspan="4">09:00</td>
+          
+            <tr class="odd">
+              <div class="registro">
+  
+
+
+
+  
+    <td align="center">
+      16:00
+    </td>
+    <td align="center">18:00</td>
+  
+  <td align="center">
+    02:00
+  </td>
+
+  <td class="projeto">Dafiti: Squads Dafiti</td>
+  <td class="atividade">Desenvolvimento</td>
+  <td class="descricao"><div class="descricao_content">Desenvolvimento Dafiti
+Repondo horas
+</div></td>
+  <td class="situacao">
+    <div class="descricao_content">
+      
+        <p>Aguardando aprovação</p>
+      
+    </div>
+  </td>
+  
+    <td class="acoes"><table class="table_acoes">
+  <tr class="botoesAcao">
+    
+      <td class="btnEditarDisabled"><a href="#">Editar</a></td>
+      <td class="btnExcluirDisabled"><a href="#">Excluir</a></td>
+    
+  </tr>
+</table></td> 
+  
+</div>
+            </tr>
+          
+            <tr class="odd">
+              <div class="registro">
+  
+
+
+
+  
+    <td align="center">
+      13:00
+    </td>
+    <td align="center">16:00</td>
+  
+  <td align="center">
+    03:00
+  </td>
+
+  <td class="projeto">Dafiti: Squads Dafiti</td>
+  <td class="atividade">Desenvolvimento</td>
+  <td class="descricao"><div class="descricao_content">Reunião do novo serviço do marketplace em Osasco</div></td>
+  <td class="situacao">
+    <div class="descricao_content">
+      
+        <p>Aguardando aprovação</p>
+      
+    </div>
+  </td>
+  
+    <td class="acoes"><table class="table_acoes">
+  <tr class="botoesAcao">
+    
+      <td class="btnEditarDisabled"><a href="#">Editar</a></td>
+      <td class="btnExcluirDisabled"><a href="#">Excluir</a></td>
+    
+  </tr>
+</table></td> 
+  
+</div>
+            </tr>
+          
+            <tr class="odd">
+              <div class="registro">
+  
+
+
+
+  
+    <td align="center">
+      08:00
+    </td>
+    <td align="center">12:00</td>
+  
+  <td align="center">
+    04:00
+  </td>
+
+  <td class="projeto">Dafiti: Squads Dafiti</td>
+  <td class="atividade">Desenvolvimento</td>
+  <td class="descricao"><div class="descricao_content">Reunião do novo serviço do marketplace em Osasco</div></td>
+  <td class="situacao">
+    <div class="descricao_content">
+      
+        <p>Aguardando aprovação</p>
+      
+    </div>
+  </td>
+  
+    <td class="acoes"><table class="table_acoes">
+  <tr class="botoesAcao">
+    
+      <td class="btnEditarDisabled"><a href="#">Editar</a></td>
+      <td class="btnExcluirDisabled"><a href="#">Excluir</a></td>
+    
+  </tr>
+</table></td> 
+  
+</div>
+            </tr>
+          
+        </tr>
+      
+        <tr class="even">
+          <td class="dia" rowspan="4">Qua</td>
+          <td class="data" rowspan="4">08/01/2020</td>
+          <td class="horas" rowspan="4">10:00</td>
+          
+            <tr class="even">
+              <div class="registro">
+  
+
+
+
+  
+    <td align="center">
+      21:30
+    </td>
+    <td align="center">22:00</td>
+  
+  <td align="center">
+    00:30
+  </td>
+
+  <td class="projeto">Dafiti: Squads Dafiti</td>
+  <td class="atividade">Desenvolvimento</td>
+  <td class="descricao"><div class="descricao_content">Reunião com o Higor para reunião do novo serviço.</div></td>
+  <td class="situacao">
+    <div class="descricao_content">
+      
+        <p>Aguardando aprovação</p>
+      
+    </div>
+  </td>
+  
+    <td class="acoes"><table class="table_acoes">
+  <tr class="botoesAcao">
+    
+      <td class="btnEditarDisabled"><a href="#">Editar</a></td>
+      <td class="btnExcluirDisabled"><a href="#">Excluir</a></td>
+    
+  </tr>
+</table></td> 
+  
+</div>
+            </tr>
+          
+            <tr class="even">
+              <div class="registro">
+  
+
+
+
+  
+    <td align="center">
+      12:00
+    </td>
+    <td align="center">18:00</td>
+  
+  <td align="center">
+    06:00
+  </td>
+
+  <td class="projeto">Dafiti: Squads Dafiti</td>
+  <td class="atividade">Desenvolvimento</td>
+  <td class="descricao"><div class="descricao_content">Desenvolvimento Dafiti
+Repondo horas</div></td>
+  <td class="situacao">
+    <div class="descricao_content">
+      
+        <p>Aguardando aprovação</p>
+      
+    </div>
+  </td>
+  
+    <td class="acoes"><table class="table_acoes">
+  <tr class="botoesAcao">
+    
+      <td class="btnEditarDisabled"><a href="#">Editar</a></td>
+      <td class="btnExcluirDisabled"><a href="#">Excluir</a></td>
+    
+  </tr>
+</table></td> 
+  
+</div>
+            </tr>
+          
+            <tr class="even">
+              <div class="registro">
+  
+
+
+
+  
+    <td align="center">
+      08:30
+    </td>
+    <td align="center">12:00</td>
+  
+  <td align="center">
+    03:30
+  </td>
+
+  <td class="projeto">Dafiti: Squads Dafiti</td>
+  <td class="atividade">Desenvolvimento</td>
+  <td class="descricao"><div class="descricao_content">Desenvolvimento Dafiti
+</div></td>
+  <td class="situacao">
+    <div class="descricao_content">
+      
+        <p>Aguardando aprovação</p>
+      
+    </div>
+  </td>
+  
+    <td class="acoes"><table class="table_acoes">
+  <tr class="botoesAcao">
+    
+      <td class="btnEditarDisabled"><a href="#">Editar</a></td>
+      <td class="btnExcluirDisabled"><a href="#">Excluir</a></td>
+    
+  </tr>
+</table></td> 
+  
+</div>
+            </tr>
+          
+        </tr>
+      
+        <tr class="odd">
+          <td class="dia" rowspan="3">Ter</td>
+          <td class="data" rowspan="3">07/01/2020</td>
+          <td class="horas" rowspan="3">08:00</td>
+          
+            <tr class="odd">
+              <div class="registro">
+  
+
+
+
+  
+    <td align="center">
+      13:00
+    </td>
+    <td align="center">18:00</td>
+  
+  <td align="center">
+    05:00
+  </td>
+
+  <td class="projeto">Dafiti: Squads Dafiti</td>
+  <td class="atividade">Desenvolvimento</td>
+  <td class="descricao"><div class="descricao_content">Desenvolvimento Dafiti
+</div></td>
+  <td class="situacao">
+    <div class="descricao_content">
+      
+        <p>Aguardando aprovação</p>
+      
+    </div>
+  </td>
+  
+    <td class="acoes"><table class="table_acoes">
+  <tr class="botoesAcao">
+    
+      <td class="btnEditarDisabled"><a href="#">Editar</a></td>
+      <td class="btnExcluirDisabled"><a href="#">Excluir</a></td>
+    
+  </tr>
+</table></td> 
+  
+</div>
+            </tr>
+          
+            <tr class="odd">
+              <div class="registro">
+  
+
+
+
+  
+    <td align="center">
+      09:00
+    </td>
+    <td align="center">12:00</td>
+  
+  <td align="center">
+    03:00
+  </td>
+
+  <td class="projeto">Dafiti: Squads Dafiti</td>
+  <td class="atividade">Desenvolvimento</td>
+  <td class="descricao"><div class="descricao_content">Desenvolvimento Dafiti
+</div></td>
+  <td class="situacao">
+    <div class="descricao_content">
+      
+        <p>Aguardando aprovação</p>
+      
+    </div>
+  </td>
+  
+    <td class="acoes"><table class="table_acoes">
+  <tr class="botoesAcao">
+    
+      <td class="btnEditarDisabled"><a href="#">Editar</a></td>
+      <td class="btnExcluirDisabled"><a href="#">Excluir</a></td>
+    
+  </tr>
+</table></td> 
+  
+</div>
+            </tr>
+          
+        </tr>
+      
+        <tr class="even">
+          <td class="dia" rowspan="3">Seg</td>
+          <td class="data" rowspan="3">06/01/2020</td>
+          <td class="horas" rowspan="3">09:00</td>
+          
+            <tr class="even">
+              <div class="registro">
+  
+
+
+
+  
+    <td align="center">
+      13:00
+    </td>
+    <td align="center">18:30</td>
+  
+  <td align="center">
+    05:30
+  </td>
+
+  <td class="projeto">Dafiti: Squads Dafiti</td>
+  <td class="atividade">Desenvolvimento</td>
+  <td class="descricao"><div class="descricao_content">Desenvolvimento Dafiti
+Sniper
+Repondo horas</div></td>
+  <td class="situacao">
+    <div class="descricao_content">
+      
+        <p>Aguardando aprovação</p>
+      
+    </div>
+  </td>
+  
+    <td class="acoes"><table class="table_acoes">
+  <tr class="botoesAcao">
+    
+      <td class="btnEditarDisabled"><a href="#">Editar</a></td>
+      <td class="btnExcluirDisabled"><a href="#">Excluir</a></td>
+    
+  </tr>
+</table></td> 
+  
+</div>
+            </tr>
+          
+            <tr class="even">
+              <div class="registro">
+  
+
+
+
+  
+    <td align="center">
+      08:30
+    </td>
+    <td align="center">12:00</td>
+  
+  <td align="center">
+    03:30
+  </td>
+
+  <td class="projeto">Dafiti: Squads Dafiti</td>
+  <td class="atividade">Desenvolvimento</td>
+  <td class="descricao"><div class="descricao_content">Desenvolvimento Dafiti
+Sniper</div></td>
+  <td class="situacao">
+    <div class="descricao_content">
+      
+        <p>Aguardando aprovação</p>
+      
+    </div>
+  </td>
+  
+    <td class="acoes"><table class="table_acoes">
+  <tr class="botoesAcao">
+    
+      <td class="btnEditarDisabled"><a href="#">Editar</a></td>
+      <td class="btnExcluirDisabled"><a href="#">Excluir</a></td>
+    
+  </tr>
+</table></td> 
+  
+</div>
+            </tr>
+          
+        </tr>
+      
+        <tr class="odd">
+          <td class="dia" rowspan="3">Sex</td>
+          <td class="data" rowspan="3">03/01/2020</td>
+          <td class="horas" rowspan="3">08:00</td>
+          
+            <tr class="odd">
+              <div class="registro">
+  
+
+
+
+  
+    <td align="center">
+      13:00
+    </td>
+    <td align="center">18:00</td>
+  
+  <td align="center">
+    05:00
+  </td>
+
+  <td class="projeto">Dafiti: Squads Dafiti</td>
+  <td class="atividade">Desenvolvimento</td>
+  <td class="descricao"><div class="descricao_content">Desenvolvimento Dafiti</div></td>
+  <td class="situacao">
+    <div class="descricao_content">
+      
+        <p>Aguardando aprovação</p>
+      
+    </div>
+  </td>
+  
+    <td class="acoes"><table class="table_acoes">
+  <tr class="botoesAcao">
+    
+      <td class="btnEditarDisabled"><a href="#">Editar</a></td>
+      <td class="btnExcluirDisabled"><a href="#">Excluir</a></td>
+    
+  </tr>
+</table></td> 
+  
+</div>
+            </tr>
+          
+            <tr class="odd">
+              <div class="registro">
+  
+
+
+
+  
+    <td align="center">
+      09:00
+    </td>
+    <td align="center">12:00</td>
+  
+  <td align="center">
+    03:00
+  </td>
+
+  <td class="projeto">Dafiti: Squads Dafiti</td>
+  <td class="atividade">Desenvolvimento</td>
+  <td class="descricao"><div class="descricao_content">Desenvolvimento Dafiti</div></td>
+  <td class="situacao">
+    <div class="descricao_content">
+      
+        <p>Aguardando aprovação</p>
+      
+    </div>
+  </td>
+  
+    <td class="acoes"><table class="table_acoes">
+  <tr class="botoesAcao">
+    
+      <td class="btnEditarDisabled"><a href="#">Editar</a></td>
+      <td class="btnExcluirDisabled"><a href="#">Excluir</a></td>
+    
+  </tr>
+</table></td> 
+  
+</div>
+            </tr>
+          
+        </tr>
+      
+        <tr class="even">
+          <td class="dia" rowspan="3">Qui</td>
+          <td class="data" rowspan="3">02/01/2020</td>
+          <td class="horas" rowspan="3">08:00</td>
+          
+            <tr class="even">
+              <div class="registro">
+  
+
+
+
+  
+    <td align="center">
+      13:00
+    </td>
+    <td align="center">18:00</td>
+  
+  <td align="center">
+    05:00
+  </td>
+
+  <td class="projeto">Dafiti: Squads Dafiti</td>
+  <td class="atividade">Desenvolvimento</td>
+  <td class="descricao"><div class="descricao_content">Desenvolvimento Dafiti
+</div></td>
+  <td class="situacao">
+    <div class="descricao_content">
+      
+        <p>Aguardando aprovação</p>
+      
+    </div>
+  </td>
+  
+    <td class="acoes"><table class="table_acoes">
+  <tr class="botoesAcao">
+    
+      <td class="btnEditarDisabled"><a href="#">Editar</a></td>
+      <td class="btnExcluirDisabled"><a href="#">Excluir</a></td>
+    
+  </tr>
+</table></td> 
+  
+</div>
+            </tr>
+          
+            <tr class="even">
+              <div class="registro">
+  
+
+
+
+  
+    <td align="center">
+      09:00
+    </td>
+    <td align="center">12:00</td>
+  
+  <td align="center">
+    03:00
+  </td>
+
+  <td class="projeto">Dafiti: Squads Dafiti</td>
+  <td class="atividade">Desenvolvimento</td>
+  <td class="descricao"><div class="descricao_content">Desenvolvimento Dafiti
+</div></td>
+  <td class="situacao">
+    <div class="descricao_content">
+      
+        <p>Aguardando aprovação</p>
+      
+    </div>
+  </td>
+  
+    <td class="acoes"><table class="table_acoes">
+  <tr class="botoesAcao">
+    
+      <td class="btnEditarDisabled"><a href="#">Editar</a></td>
+      <td class="btnExcluirDisabled"><a href="#">Excluir</a></td>
+    
+  </tr>
+</table></td> 
+  
+</div>
+            </tr>
+          
+        </tr>
+      
+    </tbody>
+  </table>
+</div>
+
+
+<!-- ==========================================================================
+     Fim da Insercao do layout da action detro do layout da aplicao
+     ========================================================================== -->
+
+   </div>
+ </div>
+ <div id="end"></div>
+ <div id="footer">
+  4.31.2
+</div>
+</div>
+</div>
+<div id="border"></div>
+</div>
+</body>
+</html>
