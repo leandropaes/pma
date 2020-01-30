@@ -104,7 +104,7 @@ app_new()
     HR_END=${3}
     DATE=${4-$(date +%d/%m/%Y)}
 
-    echo -e $CL_YELLOW"Informe a descrição:\n(Descrição padrão:$CL_DEFAULT $DESCRIPTION_DEFAULT)"$CL_DEFAULT
+    echo -e $CL_YELLOW"Informe a descrição [ENTER para utilizar a padrão]:\n(Descrição padrão:$CL_DEFAULT $DESCRIPTION_DEFAULT)"$CL_DEFAULT
     read DESCRIPTION
 
     if [ -z "$DESCRIPTION" ] ; then
