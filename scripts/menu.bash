@@ -21,8 +21,8 @@ menu_project()
     ./$THIS project [command]
 
 <33>Commands:
-    <32;1>list<0>                           Lista projetos do seu usuário
-    <32;1>items <33;1><project_cod><0>       Lista atividades de um projeto
-    <32;1>refresh<0>                        Atualiza lista de projetos do seu usuário
+    <32;1>list<0>                      \tLista projetos do seu usuário
+    <32;1>items <33;1><project_cod><0> \tLista atividades de um projeto
+    <32;1>refresh<0>                   \tAtualiza lista de projetos do seu usuário
     "
 }

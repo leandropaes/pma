@@ -12,8 +12,7 @@ Por favor, informe os campos abaixo no arquivo:$CL_YELLOW scripts/configs.bash$C
 - PASSWORD
 - PROJECT_DEFAULT
 - ACTIVITY_DEFAULT
-- DESCRIPTION_DEFAULT
-        "
+- DESCRIPTION_DEFAULT"
 
         exit 1
     fi
@@ -102,16 +101,36 @@ app_new()
 {
     HR_START=${2}
     HR_END=${3}
-    DESCRIPTION="${4:-$DESCRIPTION_DEFAULT}"
-    DATE=${5-$(date +%d/%m/%Y)}
+    DATE=${4-$(date +%d/%m/%Y)}
 
     if [ -z "$HR_END" ] ; then
         logo
         
         echo -e $CL_RED"PMA - ATENÇÃO\n"$CL_DEFAULT
         echo -e 'Por favor, verifique se informou todos os parâmetros corretamente:\n'
-        echo -e "Ex: ./$THIS new 08:00 12:00 'Descrição aqui... (opicional)'\n"
+        echo -e "Ex: ./$THIS new 08:00 12:00 <date :optional>\n"
         exit 1
+    fi
+
+    echo -e $CL_YELLOW"Informe a descrição [ENTER para utilizar a padrão]:\n$CL_DEFAULT(Descrição padrão:$CL_GREN $DESCRIPTION_DEFAULT"$CL_DEFAULT")"
+    read DESCRIPTION
+
+    if [ -z "$DESCRIPTION" ] ; then
+        DESCRIPTION=$DESCRIPTION_DEFAULT
+    fi
+
+    echo -e $CL_YELLOW"Informe o código do projeto [ENTER para utilizar a padrão]:\n$CL_DEFAULT(Projeto padrão:$CL_GREN $PROJECT_DEFAULT"$CL_DEFAULT")"
+    read PROJECT
+
+    if [ -z "$PROJECT" ] ; then
+        PROJECT=$PROJECT_DEFAULT
+    fi
+
+    echo -e $CL_YELLOW"Informe o código da atividade do projeto [ENTER para utilizar a padrão]:\n$CL_DEFAULT(Atividade padrão:$CL_GREN $ACTIVITY_DEFAULT"$CL_DEFAULT")"
+    read ACTIVITY
+
+    if [ -z "$ACTIVITY" ] ; then
+        ACTIVITY=$ACTIVITY_DEFAULT
     fi
 
     login
@@ -124,8 +143,8 @@ app_new()
         -F "registro[inicio]=$HR_START" \
         -F "registro[fim]=$HR_END" \
         -F "registro[descricao]=$DESCRIPTION" \
-        -F "registro[projeto_id]=$PROJECT_DEFAULT" \
-        -F "registro[atividade_id]=$ACTIVITY_DEFAULT" \
+        -F "registro[projeto_id]=$PROJECT" \
+        -F "registro[atividade_id]=$ACTIVITY" \
         -F "commit=Salvar" > $CURL_RESPONSE_FILE
 
     MSG_ERROR=$(cat $CURL_RESPONSE_FILE | sed -n 's:.*id="msgNotice">\(.*\)</p>.*:\1:p')
