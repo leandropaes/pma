@@ -2,6 +2,8 @@
 
 Para quem vive no terminal e não quer sair para fazer aponamento.
 
+![Repo_Lista](screenshot.gif)
+
 ## Configuração
 
 Antes de utilizar copie o arquivo `scripts/configs.bash.example` para `scripts/configs.bash`.
