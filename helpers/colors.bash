@@ -1,0 +1,7 @@
+CL_BG_RED='\e[1;101m'
+CL_BG_GREN='\e[1;42m'
+CL_BG_DEFAULT='\e[1;49m'
+CL_RED='\e[91m'
+CL_GREN='\e[92m'
+CL_YELLOW='\e[33m'
+CL_DEFAULT='\e[0;49m'

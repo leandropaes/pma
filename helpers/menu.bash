@@ -7,8 +7,10 @@ menu()
     ./$THIS [command] [options]
 
 <33>Commands:
+    <32;1>install<0>             Configuração inicial da aplicação
     <32;1>new<0>                 Novo apontamento
     <32;1>project<0>             Lista de projetos do seu usuário
+    <32;1>clear<0>               Limpa todos arquivos de cache
     "
 }
 

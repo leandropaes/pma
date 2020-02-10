@@ -1,2 +1,2 @@
-scripts/configs.bash
+helpers/env.bash
 cache/*.txt
