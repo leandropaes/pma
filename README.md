@@ -2,19 +2,21 @@
 
 Para quem vive no terminal e não quer sair para fazer aponamento.
 
-![Repo_Lista](install.gif)
-
 ## Configuração
 
 Antes de utilizar copie o arquivo `scripts/configs.bash.example` para `scripts/configs.bash`.
 
 Agora execute o comando `./pma.sh install` para realizar as configurações de login e selecionar projeto e descrição padrão.
 
+![Repo_Lista](install.gif)
+
 ## Apontamento
 
-![Repo_Lista](register.gif)
+Para realizar um novo apontamento de horas, execute o comando abaixo:
 
 `./pma.sh new <hr_start> <hr_end> <date :optional>`
+
+![Repo_Lista](register.gif)
 
 #### Examplo 1 (data atual):
 Apontamento para data atual:
