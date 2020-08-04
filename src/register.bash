@@ -23,7 +23,7 @@ app_new()
     fi
 
     # Project input
-    echo -e $CL_YELLOW"Informe o código do projeto [ENTER para utilizar a padrão]:\n$CL_DEFAULT(Projeto padrão:$CL_GREN $PROJECT_DEFAULT"$CL_DEFAULT")"
+    echo -e $CL_YELLOW"Informe o código do projeto [ENTER para utilizar a padrão]:\n$CL_DEFAULT(Projeto padrão:$CL_GREN $PROJECT_DEFAULT - $PROJECT_DEFAULT_DESC"$CL_DEFAULT")"
     app_project_list
     echo
     read -p "Código do Projeto: " PROJECT
@@ -37,7 +37,7 @@ app_new()
     if [ $PROJECT != $PROJECT_DEFAULT ]; then
         echo -e $CL_YELLOW"Informe o código da atividade do projeto:$CL_DEFAULT"
     else
-        echo -e $CL_YELLOW"Informe o código da atividade do projeto [ENTER para utilizar a padrão]:\n$CL_DEFAULT(Atividade padrão:$CL_GREN $ACTIVITY_DEFAULT"$CL_DEFAULT")"
+        echo -e $CL_YELLOW"Informe o código da atividade do projeto [ENTER para utilizar a padrão]:\n$CL_DEFAULT(Atividade padrão:$CL_GREN $ACTIVITY_DEFAULT - $ACTIVITY_DEFAULT_DESC"$CL_DEFAULT")"
     fi
 
     app_project_items $PROJECT
