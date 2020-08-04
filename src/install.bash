@@ -50,6 +50,8 @@ app_install_project()
     echo
     read -p "Cód. do Projeto: " INPUT_COD_PROJECT
     echo
+
+    PROJECT_DEFAULT_DESC=$(app_project_list | sed -e 's/\t//g' | grep "$INPUT_COD_PROJECT |" | cut -d '|' -f2 | xargs echo -n)
 }
 
 app_install_activity()
@@ -61,6 +63,8 @@ app_install_activity()
     echo
     read -p "Cód. da Atividade: " INPUT_COD_ACTIVITY
     echo
+
+    ACTIVITY_DEFAULT_DESC=$(app_project_items $INPUT_COD_PROJECT | sed -e 's/\t//g' | grep "$INPUT_COD_ACTIVITY |" | cut -d '|' -f2 | xargs echo -n)
 }
 
 app_install_description()
@@ -78,7 +82,9 @@ app_install_generate_config()
         | sed "s/{{LOGIN_PMA}}/$INPUT_LOGIN/g" \
         | sed "s/{{PASSWORD_PMA}}/$INPUT_PASSWORD/g" \
         | sed "s/{{COD_PROJECT_DEFAULT}}/$INPUT_COD_PROJECT/g" \
+        | sed "s/{{PROJECT_DEFAULT_DESC}}/$PROJECT_DEFAULT_DESC/g" \
         | sed "s/{{COD_ACTIVITY_DEFAULT}}/$INPUT_COD_ACTIVITY/g" \
+        | sed "s/{{ACTIVITY_DEFAULT_DESC}}/$ACTIVITY_DEFAULT_DESC/g" \
         | sed "s/{{DESCRIPTION_DEFAULT}}/$INPUT_DESCRIPTION/g" > "helpers/env.bash"
 
     echo -e $CL_GREN"Configuração realizada com sucesso!"
