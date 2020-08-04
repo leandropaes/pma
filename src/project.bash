@@ -48,7 +48,7 @@ app_project_items()
     echo > $CURL_RESPONSE_FILE
 
     # list items
-    curl -s -b $COOKIE_FILE POST {$URL}/registros/set_atividade?projeto_id=$PROJECT_COD \
+    curl -s -b $COOKIE_FILE -X 'POST' {$URL}/registros/set_atividade?projeto_id=$PROJECT_COD \
         | sed -n '/<select id="registro_atividade_id"/,/<\/select/p' \
         | grep -P 'value="\K[^"]+' \
         | sed -e 's/<option value=//g' -e 's/<\/option>//g' -e 's/">/\t | \t /g' -e 's/"/ /g' -e 's/<\/select>//g' \
