@@ -2,30 +2,26 @@
 
 Para quem vive no terminal e não quer sair para fazer aponamento.
 
-![Repo_Lista](screenshot.gif)
+![Repo_Lista](install.gif)
 
 ## Configuração
 
 Antes de utilizar copie o arquivo `scripts/configs.bash.example` para `scripts/configs.bash`.
 
-Agora preencha os parâmetros de configuração abaixo no arquivo: `scripts/configs.bash`
-
-- LOGIN=<login_pma>
-- PASSWORD=<password_pma>
-- PROJECT_DEFAULT=<project_id>
-- ACTIVITY_DEFAULT=<activity_id>
-- DESCRIPTION_DEFAULT='description default here'
+Agora execute o comando `./pma.sh install` para realizar as configurações de login e selecionar projeto e descrição padrão.
 
 ## Apontamento
 
+![Repo_Lista](register.gif)
+
 `./pma.sh new <hr_start> <hr_end> <date :optional>`
 
-#### Example 1:
+#### Examplo 1 (data atual):
 Apontamento para data atual:
 
 `./pma.sh new 08:00 12:00`
 
-#### Example 2:
+#### Exemplo 2 (data personalizada):
 Apontamento para data personalizada:
 `./pma.sh new 08:00 12:00 29/01/2020`
 
