@@ -1,2 +1,2 @@
 helpers/env.bash
-cache/*.txt
+cache/*
