@@ -27,6 +27,14 @@ Apontamento para data atual:
 Apontamento para data personalizada:
 `./pma.sh new 08:00 12:00 29/01/2020`
 
+## Listar apontamentos
+
+Para listar seus apontamentos, execute o comando abaixo informando uma data de início no formato `dd/mm/yyyy`:
+
+`./pma.sh list <date: dd/mm/yyyy>`
+
+| Ex: `./pma.sh list 01/08/2020`
+
 ## Projetos
 
 Para listar projetos do seu usuário:
