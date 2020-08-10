@@ -15,6 +15,7 @@ source "${PWD}/src/app.bash"
 case ${1} in
     "install") app_install ;;
     "new") app_new ${@} ;;
+    "list") app_register ${@} ;;
     "project") app_project ${@} ;;
     "clear") app_clear ;;
     *) menu ;;
